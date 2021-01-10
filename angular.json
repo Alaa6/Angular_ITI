@@ -127,5 +127,8 @@
       }
     }
   },
-  "defaultProject": "day1Lab"
+  "defaultProject": "day1Lab",
+  "cli": {
+    "analytics": "7daba72e-a6cf-4646-ba8b-e87ff1c2cca4"
+  }
 }
