@@ -1,0 +1,10 @@
+<article class=" mt-3">
+    <h1>GATEGORIES</h1>
+
+    <select class="mt-3" [(ngModel)]="SelectedCategory">
+        <option *ngFor="let item of CategoryList " [value]="item.ID">{{item.Name}}</option>
+     </select>
+
+     <p>Total price {{TotalPrice | currency :'EGP'}}</p>
+
+</article> 

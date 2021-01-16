@@ -5,5 +5,7 @@ export interface IProduct {
     Quantity     : number   ,
     Price        : number   ,
     Img          : string   ,
+    _Date         : Date     ,
     CateogryID   : Number
 }
+ 

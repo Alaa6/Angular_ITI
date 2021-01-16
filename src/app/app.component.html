@@ -1,8 +1,19 @@
 <app-header></app-header>
 
-<div class="container-fluid">
-    <app-product></app-product>
+<article class="row mt-3">
+
+    <aside class=" col-12 col-sm-12  col-md-12  col-lg-3 col-xl-3">
+        <app-side-bar></app-side-bar>
+
+    </aside>
+    <aside id="right" class="  col-12 col-sm-12  col-md-12  col-lg-8 col-xl-8">
+        <!-- <app-order></app-order> -->
+        <router-outlet></router-outlet>
     
-</div>
+    
+    </aside>
+</article>
+
+
 
 <app-footer></app-footer>
