@@ -1,0 +1,19 @@
+
+$colors: #fff, #fff, #212121 ,#212121,#212121;
+$bgColors : darkslategray , slategray , dimgray , gray ,darkgray;
+
+// @each $bgColor in $bgColors {
+//   .changeColors-#{ $bgColor} {
+//      background-color: $bgColor;
+//   }
+// }
+
+
+@each $bgColor in $bgColors {
+    .changeColors-#{$bgColor} {
+       background-color: $bgColor;
+    }
+  }
+  
+
+

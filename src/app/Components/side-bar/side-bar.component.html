@@ -16,22 +16,26 @@
 
       <div class="card-body ">
 
-        <div class="row mt-1" routerLink ="/home" routerLinkActive="active"> 
+        <div class="row mt-1 p-4 pointer" routerLink ="/home" routerLinkActive="_active"> 
           <i class="fas fa-home  col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3 " style="color: #697799 ; "></i>
           <p class=" text card-text   "> Home</p>
         </div>
 
-        <div class="row mt-1" routerLink ="/about" routerLinkActive="active">
-          <i class="fas fa-pen  col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3 " style="color: #697799; "></i>
+        <div class="row mt-1 p-4 pointer" routerLink ="/about" routerLinkActive="_active">
+          <i class="fas fa-address-card  col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3"  style="color: #697799; "></i>
           <p class=" text card-text" >About us</p>
         </div>
 
-        <div class="row mt-1" routerLink ="/contacts" routerLinkActive="active" >
-          <!-- <i class="fas fa-birthday-cake  col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3 "
-                style="color: #697799; "></i> -->
-          <i class="fas fa-pen  col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3 " style="color: #697799; "></i>
-
+        <div class="row mt-1 p-4 pointer" routerLink ="/contacts" routerLinkActive="_active"  >
+          <i class="fas fa-address-book col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3 " style="color: #697799; "></i>
           <p class=" text card-text">Contact us </p>
+        </div>
+
+        <div class="row mt-1 p-4 pointer" routerLink ="/order/products" routerLinkActive="_active" >
+  
+          <i class="fas fa-mobile col-3 col-sm-3 col-md-3  col-lg-3 col-xl-3  mt-1 ml-3 " style="color: #697799; "></i>
+
+          <p class=" text card-text">Products </p>
         </div>
       </div>
 
@@ -54,9 +58,11 @@
     <div class="card " style="background: #697799; color: #fff;">
       <div class="card-body ">
 
-        <div class="row mt-1" routerLink ="/order" routerLinkActive="active">
-          <i class="fas fa-pen  col-2  mt-1" style="color: #fff; "></i>
-          <p class=" text card-text col-10"> Products</p>
+        <div class="row mt-1 p-4 pointer" routerLink ="admin/insertproduct" >
+
+          <i class="fas fa-mobile  mt-1" style="color: #fff; "></i>
+
+          <p class=" text card-text col-10"> Admin</p>
         </div>
 
         <!--   
@@ -81,13 +87,8 @@
       <div class="card-body ">
         <p class="card-title"> Interests</p>
 
-        <div class="d-flex flex-wrap">
-          <div class="p-1 mr-1 mt-1" style="background: #3a4c54; color: #fff;">News</div>
-          <div class="p-1 mr-1 mt-1" style="background: #4b6270; color: #fff;">Games</div>
-          <div class="p-1 mr-1 mt-1" style="background: #9aafba; color: #212121;">Friends</div>
-          <div class="p-1 mr-1 mt-1" style="background: #dde4e7; color: #212121;;">Design</div>
-          <div class="p-1 mr-1 mt-1" style="background: #f4f7f8; color:  #212121;;">Photos</div>
-
+        <div class="d-flex flex-wrap" *ngFor="let category of categoryList">
+          <div class="p-2 mr-1 mt-1 rounded " style="background-color: #3a4c54; color: #fff;" >{{category.Name}}</div>
         </div>
 
 

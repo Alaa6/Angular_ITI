@@ -1,8 +1,9 @@
 import {IProduct } from './iproduct'
 
 export interface ICategory {
-    ID           : number   ,
+    id           : number   ,
     Name         : string   ,
+    Desciption  ?: string   ,
     productList ?: IProduct[]
 }
  

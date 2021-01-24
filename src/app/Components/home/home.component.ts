@@ -3,6 +3,11 @@ import { DiscountOffers } from '../../viewModel/discount-offers.enum'
 import { Store } from '../../viewModel/store'
 import { IProduct } from '../../viewModel/iproduct'
 import { ICategory } from '../../viewModel/icategory';
+import { ProductServiceService } from 'src/app/services/product-service.service';
+import { OrderService } from 'src/app/services/order.service';
+import { ProductService } from 'src/app/services/product.service';
+import { IProductCards } from 'src/app/viewModel/iproduct-cards';
+import { ProductData } from 'src/app/viewModel/product-data';
 
 
 @Component({
@@ -12,13 +17,13 @@ import { ICategory } from '../../viewModel/icategory';
 })
 
 
-export class HomeComponent  {
+export class HomeComponent implements OnInit {
 
   Discount: DiscountOffers;
   // store: Store;
   ClientName: string;
-  ProductList: IProduct[];
-  CategoryList: ICategory[];
+  ProductList: ProductData[];
+  CategoryList: ICategory[] | undefined;
   IsPurshased: boolean;
   selectedValue: number;
   selectedValue2: number;
@@ -31,29 +36,14 @@ export class HomeComponent  {
  
  
 
-  constructor() {
+  constructor(private productserve: ProductServiceService , 
+                private orderServe : OrderService , 
+                private productService :ProductService) {
     this.Discount = DiscountOffers.Low 
     // this.store = new Store("TestStoreName", ['pr1', 'pr2'], '../../../assets/shop.png');
-    this.ProductList = [
-      { ID: 1, Name: "test product 1", Quantity: 1, Price: 10000, Img: '../../../assets/ppb.png', _Date :new Date() ,CateogryID: 1 },
-      { ID: 2, Name: "test product 6", Quantity: 3, Price: 10000, Img: '../../../assets/ppb.png', _Date :new Date() ,CateogryID: 1 },
-
-      { ID: 3, Name: "test product 2", Quantity: 3, Price: 20000, Img: '../../../assets/ppb.png', _Date :new Date() ,CateogryID: 2 },
-      { ID: 4, Name: "test product 5", Quantity: 4, Price: 20000, Img: '../../../assets/ppb.png', _Date :new Date() ,CateogryID: 2 },
-
-      { ID: 5, Name: "test product 3", Quantity: 103, Price: 30000, Img: '../../../assets/ppb.png',_Date :new Date() , CateogryID: 3 } ,
-      { ID: 6 , Name: "test product 7", Quantity: 3, Price: 20000, Img: '../../../assets/ppb.png',_Date :new Date() , CateogryID: 3 },
-
-      { ID: 7, Name: "test product 4", Quantity: 0, Price: 40000, Img: '../../../assets/ppb.png', _Date :new Date() , CateogryID: 3 } ,
-
-
-    ]
+    this.ProductList = []
     this.ClientName = 'alaa'
-    this.CategoryList = [
-      { ID: 1, Name: 'test Category 1' },
-      { ID: 2, Name: 'test Category 2' },
-      { ID: 3, Name: 'test Category 3' }
-    ]
+    this.CategoryList = []
 
     this.IsPurshased = true
     this.selectedValue = 1 
@@ -64,8 +54,21 @@ export class HomeComponent  {
     this.nationalID = 0
     this.pName = 'test product 6'
    
-    
+     
 
+  }
+  ngOnInit(): void {
+    // this.ProductList = this.productserve.getAllProducts()
+    // this.CategoryList = this.orderServe.getAllCateories()
+    this.productService.getAllProductCards().subscribe((res) =>{
+      console.log(res);
+      this.ProductList =  res.data
+   
+
+      
+
+    } ,(err)=>console.log(err)
+    )
   }
 
   onBuyToggle() {
@@ -79,15 +82,15 @@ export class HomeComponent  {
 
   onBuy ( id : any){
 
-    this.ProductList.forEach(product => {
+    // this.ProductList.forEach(product => {
 
-        if (product.ID == id) {
-          product.Quantity -- ;
+    //     if (product.id == id) {
+    //       product.Quantity -- ;
           
-        }
+    //     }
       
        
-     });
+    //  });
 
      
   }

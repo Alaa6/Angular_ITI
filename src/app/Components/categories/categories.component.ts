@@ -14,9 +14,9 @@ export class CategoriesComponent implements OnInit {
   
   constructor() { 
     this.CategoryList = [
-      { ID: 1, Name: 'test Category 1'  },
-      { ID: 2, Name: 'test Category 2' },
-      { ID: 3, Name: 'test Category 3' }
+      { id: 1, Name: 'test Category 1'  },
+      { id: 2, Name: 'test Category 2' },
+      { id: 3, Name: 'test Category 3' }
     ]
 
     this.SelectedCategory = 1  

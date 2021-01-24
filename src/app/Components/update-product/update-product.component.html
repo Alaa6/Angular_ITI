@@ -1,0 +1,26 @@
+
+<h2 mat-dialog-title> updating</h2>
+
+<mat-dialog-content [formGroup]="form">
+
+
+    <input matInput class=" form-control mt-3"  placeholder=" Product Name"              formControlName="name"> <br>
+
+    <input matInput class=" form-control mt-3" type="number" placeholder=" Product price"      formControlName="price"> <br>
+    <input matInput class=" form-control mt-3" type="number"   placeholder=" Product quantity" formControlName="quantity"> <br>
+
+    <select class=" form-control mt-3"  formControlName="catID">
+        <option *ngFor="let item of categoryList " [value]="item.id">{{item.Name}}</option>
+     </select> <br>
+
+    
+
+
+
+
+</mat-dialog-content>
+
+<mat-dialog-actions>
+    <button class="mat-raised-button" (click)="close()">Close</button>
+    <button class="mat-raised-button mat-primary" (click)="save()">Save</button>
+</mat-dialog-actions>
