@@ -31,7 +31,7 @@ export class UpdateProductComponent implements OnInit  , AfterViewInit {
     quantity : [''] ,
     catID : [1]
     
-    
+     
   });
 
   constructor( private productService : ProductService ,

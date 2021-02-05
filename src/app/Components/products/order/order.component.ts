@@ -17,7 +17,7 @@ import { Subscription } from 'rxjs';
 }) 
 export class OrderComponent implements OnInit , AfterViewInit , OnChanges {
 
- 
+  
 
   // @ViewChild ('testViewChild') viewChildVame : ElementRef |undefined
   @ViewChild ('testViewChild') viewChildVame : ElementRef  = new ElementRef('input')
@@ -32,7 +32,7 @@ export class OrderComponent implements OnInit , AfterViewInit , OnChanges {
   boughtProducts : IBoughtProducts[] 
   count : string ;
   subscriptionList: Subscription[] = []
-
+ 
  
 
   

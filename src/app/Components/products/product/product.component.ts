@@ -20,7 +20,7 @@ import { IBoughtProducts } from 'src/app/viewModel/ibought-products';
 })
 
 export class ProductComponent implements OnChanges, OnInit, OnDestroy {
-
+ 
 
   @Input() inputCatID: number;
   @Output() TotalPriceChange: EventEmitter<number>;
@@ -41,7 +41,6 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
   boughtProductsList: IBoughtProducts[];
   count: string
   productGategoryList: IProduct[] | undefined;
-
   subscriptionList: Subscription[] = []
  
 
@@ -116,7 +115,7 @@ export class ProductComponent implements OnChanges, OnInit, OnDestroy {
 
     console.log(this.boughtProductsList, 'boughtProductsList in Product components');
 
-
+ 
   }
 
 

@@ -19,7 +19,7 @@ const routes: Routes = [   // men bywdy 3la fen
   {path :"productDetails2/:pID" , component : PopUpComponent} ,
   {path :"admin/insertproduct" ,component : AddProductComponent , canActivate : [AuthGuardGuard]} ,
   {path :"login" ,component : LoginComponent} ,
-  {
+  { 
     path: 'order', 
     loadChildren: () => import('./Components/products/products.module').then(m => m.ProductsModule)
   },

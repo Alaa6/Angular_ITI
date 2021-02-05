@@ -57,7 +57,7 @@ export class ProductDetailsComponent implements OnInit , OnDestroy {
     let productByIDSubscription =  this.productService.getProductByID(Number(this.productId)).subscribe((response) => {
         this.product  = response
         console.log(response);
-      }, (err) => console.log(err) 
+      }, (err) => console.log(err)  
       )
 
       this.subscriptionList.push(productByIDSubscription)
